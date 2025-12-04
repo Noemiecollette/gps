@@ -1,24 +1,15 @@
-Package: gps4lazyscientists
+Package: gsp
 Type: Package
-Title: A package for preparing GPS tracking data, dedicated to lazy scientists
+Title: The Title of the Project
 Version: 0.0.0.9000
 Authors@R: c(
     person(given   = "Noémie",
            family  = "COLLETTE",
            role    = c("aut", "cre", "cph"),
            email   = "noemie.collette@univ-perp.fr",
-           comment = c(ORCID = "0009-0000-4226-3878")),
-    person(given   = "Martha",
-           family  = "MAC CALL",
-           email   = "martha.maccall@cefe.cnrs.fr"),
-    person(given   = "Ryan",
-           family  = "BOSWARTHICK",
-           email   = "ryan.boswarthick@cefe.cnrs.fr"),
-    person(given   = "Paul",
-           family  = "MIGUET",
-           email   = "paul.miguet@ofb.gouv.fr")
-           )
-Description: This package aims to provide a tool for lazy scientists who don't want to spend hours downloading, cleaning and formatting their GPS datasets
+           comment = c(ORCID = "0009-0000-4226-3878")))
+Description: A paragraph providing a full description of the project (on 
+    several lines...)
 URL: https://github.com/Noemiecollette/gsp
 BugReports: https://github.com/Noemiecollette/gsp/issues
 License: GPL-2

@@ -8,9 +8,8 @@ rbind_data <- function(chemin,motif_fichier)
   }
   output <- c()
   for (file in files_list) {
-    data <- readr::read_csv(chemin,file)
-    output <- rbind(outputs,datafile)
+    data_f <- readr::read_csv(here::here(chemin,file), show_col_types = FALSE)
+    output <- rbind(output,data_f)
   }
   return(output)
-
 }

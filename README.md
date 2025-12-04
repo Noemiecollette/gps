@@ -10,35 +10,27 @@ It is structured as follow:
 
 ```         
 .
-├─ README.md                                  # Presentation of the project
-├─ DESCRIPTION                                # Project metadata
-├─ LICENSE.md                                 # License of the project
-|
-├─ data/                                      # Contains raw data
-|  ├─ pantheria/                              # PanTHERIA database
-|  |  └─ PanTHERIA_1-0_WR05_Aug2008.txt
-|  |
-|  └─ wildfinder/                             # WWF WildFinder database
-|     ├─ wildfinder-ecoregions_list.csv
-|     ├─ wildfinder-ecoregions_species.csv
-|     └─ wildfinder-mammals_list.csv
-|
-├─ R/                                         # Contains R functions (only)
-|  ├─ count_ecoregions.R                      # Function to count ecoregions per species
-|  ├─ dl_wildfinder_data.R                    # Function to download WildFinder data
-|  ├─ dl_pantheria_data.R                     # Function to download PanTHERIA data
-|  ├─ join_tables.R                           # Function to merge WildFinder tables
-|  ├─ plot_counts.R                           # Function to make the barplot
-|  ├─ read_data.R                             # Function to import WildFinder tables
-|  └─ select_species.R                        # Function to subset WildFinder species
-|
-├─ analyses/                                  # Contains R scripts
-|  └─ download-data.R                         # Script to download raw data
-|
-├─ index.qmd                                  # Quarto report
-├─ index.html                                 # Quarto result (html page)
-|
-└─ make.R                                     # Script to setup & run the project
+├── DESCRIPTION                                # Project metadata
+├── LICENSE.md                                 # License of the project
+├── R                                          # Contains R functions
+│   └── README.md
+├── README.md                                  # Presentation of the project
+├── analyses                                   # Contains R scripts
+│   └── README.md
+├── data                                       # Contains raw data
+│   ├── Bat1_3D6001852B958.csv
+│   ├── Bat2_3D6001852B95D.csv
+│   ├── Bat3_3D6001852B978.csv
+│   ├── Bat4_3D6001852B980.csv
+│   ├── Bat5_3D6001852B98C.csv
+│   ├── Bat6_3D6001852B98E.csv
+│   ├── Bat7_3D6001852B9A3.csv
+│   ├── Bat8_3D6001852B9A7.csv
+│   └── README.md
+├── figures
+│   └── README.md
+└── outputs
+    └── README.md
 ```
 
 # Installation

@@ -1,6 +1,6 @@
-Package: gsp
+Package: gps4lazyscientists
 Type: Package
-Title: The Title of the Project
+Title: 
 Version: 0.0.0.9000
 Authors@R: c(
     person(given   = "Noèmie",

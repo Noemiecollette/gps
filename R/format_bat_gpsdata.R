@@ -21,8 +21,9 @@ format_gps_list <- function(data) {
         lat      = `location-lat`
       ) %>%
       dplyr::select(tag_id, datetime, lon, lat, speed)
+    
   })
-  
+    data_format <- data_format[!sapply(data_format, is.null)]
   assign("data_format", data_format, envir = .GlobalEnv)
   
 }

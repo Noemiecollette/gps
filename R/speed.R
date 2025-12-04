@@ -25,7 +25,7 @@ plot_speed <- function(gps_list) {
     )
 
   # Build full output path using here()
-  output_path <- here::here("outputs", filename)
+  output_path <- here::here("outputs","Figure_speed.png")
 
   # Save the figure
   ggplot2::ggsave(

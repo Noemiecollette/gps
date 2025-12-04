@@ -1,11 +1,10 @@
 # Package gpsdata4lazyscientists
 
-[![License: GPL-2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
+[\[License: GPL-2\](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 
-> \[!IMPORTANT\]\
-> This project is the result of the Practice 2 of the training course [Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io).
+> This project is the result of the group project of the FRB-CESAB training "Reproducible Research in Computational Ecology".
 
-This project aims to download the [PanTHERIA](https://doi.org/10.1890/08-1494.1) database (Jones *et al.*, 2009) and the [WWF WildFinder](https://www.worldwildlife.org/pages/wildfinder-database) database (World Wildlife Fund 2006). It is structured as a research compendium to be reproducible.
+This project aims to read some csv that are already downloaded in our github repository. The csv are tracking data of the [European free-tailed bat (*Tadarida teniotis*)](https://en.wikipedia.org/wiki/European_free-tailed_bat). They were downloaded from Teague O'Mara's Movebank study called ["3D flights of European free-tailed bats"](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study312057662). This project has functions to read datasets, to format and then to combine them into one dataset.
 
 ## Content
 
@@ -40,26 +39,23 @@ This project is structured as follow:
     └── README.md
 ```
 
-> \[!NOTE\]\
-> The folder **data/** is not present in this repository (listed in the `.gitignore`) but we provide the code to locally download raw data.
-
 ## Installation
 
 To install this compendium:
 
--   [Fork](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) this repository using the GitHub interface.
--   Open [RStudio IDE](https://posit.co/products/open-source/rstudio/) and create a **New Project** from **Version Control** to [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) your fork.
+-   [Fork](https://github.com/Noemiecollette/gps.git) this repository using the GitHub interface.
+-   Open [Positron IDE](https://positron.posit.co/) and create a **New Folder from Git** to clone your fork.
 
 ## Usage
 
-Open this project in RStudio IDE and launch analyses by running:
+Open this project in Positron IDE and launch analyses by running:
 
 ``` r
 source("make.R")
 ```
 
 -   All packages will be automatically installed and loaded
--   Raw data will be saved in the `data/` directory
+-   Resulting figures will be saved in the `figures/` directory
 
 ## License
 

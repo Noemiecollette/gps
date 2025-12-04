@@ -28,7 +28,5 @@ read_bat_data <- function() {
 
   names(data_list) <- tools::file_path_sans_ext(basename(csv_files))
 
-  assign("data", data_list, envir = .GlobalEnv)
-
-  invisible(data_list)
+  return(data_list)
 }

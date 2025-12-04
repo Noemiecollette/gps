@@ -1,6 +1,6 @@
 Package: gsp
 Type: Package
-Title: The Title of the Project
+Title: gpsdata4lazyscientists: A package for preparing GPS tracking data, dedicated to lazy scientists
 Version: 0.0.0.9000
 Authors@R: c(
     person(given   = "Noémie",

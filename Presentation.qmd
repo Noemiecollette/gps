@@ -12,7 +12,7 @@ author:
       email: paul.miguet@ofb.gouv.fr
     - name: Gaëlle Picon
       email: gaelle.picon@cefe.cnrs.fr
-format: html
+format: pdf
 execute:
     echo: false
 ---

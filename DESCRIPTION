@@ -1,6 +1,6 @@
 Package: gpsdata4lazyscientists
 Type: Package
-Title: A package for preparing GPS tracking data, dedicated to lazy scientists
+Title: gpsdata4lazyscientists: A package for preparing GPS tracking data, dedicated to lazy scientists
 Version: 0.0.0.9000
 Authors@R: c(
     person(given   = "Noémie",

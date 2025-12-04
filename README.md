@@ -1,15 +1,12 @@
-# Package gpsdata4lazyscientists
+# Presentation
 
 [![License: GPL-2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 
-> \[!IMPORTANT\]\
-> This project is the result of the Practice 2 of the training course [Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io).
+The package gpsdata4lazyscientists aims to provide a tool for lazy scientists who don't want to spend hours downloading, cleaning and formatting their GPS datasets.
 
-This project aims to download the [PanTHERIA](https://doi.org/10.1890/08-1494.1) database (Jones *et al.*, 2009) and the [WWF WildFinder](https://www.worldwildlife.org/pages/wildfinder-database) database (World Wildlife Fund 2006). It is structured as a research compendium to be reproducible.
+# Content
 
-## Content
-
-This project is structured as follow:
+It is structured as follow:
 
 ```         
 .
@@ -44,19 +41,17 @@ This project is structured as follow:
 └─ make.R                                     # Script to setup & run the project
 ```
 
-> \[!NOTE\]\
-> The folder **data/** is not present in this repository (listed in the `.gitignore`) but we provide the code to locally download raw data.
+# Installation
 
-## Installation
+To install the package:
 
-To install this compendium:
-
--   [Fork](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) this repository using the GitHub interface.
--   Open [RStudio IDE](https://posit.co/products/open-source/rstudio/) and create a **New Project** from **Version Control** to [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) your fork.
+```
+remotes::install_github("Noemiecollette/gps")
+```
 
 ## Usage
 
-Open this project in RStudio IDE and launch analyses by running:
+Launch analyses by running:
 
 ``` r
 source("make.R")
@@ -64,6 +59,7 @@ source("make.R")
 
 -   All packages will be automatically installed and loaded
 -   Raw data will be saved in the `data/` directory
+-   Final data will be saved in the `outputs/` directory
 
 ## License
 
@@ -71,10 +67,4 @@ This project is released under the [GPL-2](https://choosealicense.com/licenses/g
 
 ## Citation
 
-> Doe J (2024) Download PanTHERIA and WWF WildFinder databases. URL: <https://github.com/rdatatoolbox/practice-1>
-
-## References
-
-Jones KE, Bielby J, Cardillo M *et al.* (2009) PanTHERIA: A species-level database of life history, ecology, and geography of extant and recently extinct mammals. *Ecology*, 90, 2648. DOI: [10.1890/08-1494.1](https://doi.org/10.1890/08-1494.1)
-
-World Wildlife Fund (2006) WildFinder: Online database of species distributions. Version Jan-06. URL: <https://www.worldwildlife.org/pages/wildfinder-database>.
+> Boswarthick R., Collette N., Mac Call M., Miguet P., Picon G. (2025) gpsdata4lazyscientists: A package for preparing GPS tracking data, dedicated to lazy scientists. URL: <https://github.com/Noemiecollette/gps.git>

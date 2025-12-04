@@ -3,7 +3,7 @@ Type: Package
 Title: The Title of the Project
 Version: 0.0.0.9000
 Authors@R: c(
-    person(given   = "Noèmie",
+    person(given   = "Noémie",
            family  = "COLLETTE",
            role    = c("aut", "cre", "cph"),
            email   = "noemie.collette@univ-perp.fr",

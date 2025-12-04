@@ -1,0 +1,26 @@
+---
+title: "Présentation du package gpsdata4lazyscientists"
+date: 2025-12-05
+author:
+    - name: Ryan Boswarthick
+      email: ryan.boswarthick@cefe.cnrs.fr
+    - name: Noémie Collette
+      email: noemie.collette@univ-perp.fr
+    - name: Martha Mac Call
+      email: martha.maccall@cefe.cnrs.fr
+    - name: Paul Miguet
+      email: paul.miguet@ofb.gouv.fr
+    - name: Gaëlle Picon
+      email: gaelle.picon@cefe.cnrs.fr
+format: html
+execute:
+    echo: false
+---
+
+## Présentation
+
+Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic** ? Ne rêvez plus : le package gpsdata4lazyscientists est là pour vous !
+
+## Les données GPS : kézako ?
+
+## Ce que propose notre package

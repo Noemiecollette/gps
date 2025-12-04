@@ -1,15 +1,17 @@
-# Fonction pour fusionner les fichiers de données
-rbind_data <- function(chemin,motif_fichier)
+#' Combiner
+#'
+#' @data_format_list
+#' liste de data formatees
+#' 
+#' output
+#'
+#'
+rbind_data <- function(data_format_list)
 {
-  files_list <- list.files(chemin,pattern='Bat')
   output <- c()
-  if (length(files_list)==0) {
-    warning("Pas de fichiers dans le répertoire")
-  }
-  output <- c()
-  for (file in files_list) {
-    data_f <- readr::read_csv(here::here(chemin,file), show_col_types = FALSE)
-    output <- rbind(output,data_f)
+  n <- length(data_format_list)
+  for (i in 1:n) {
+    output <- rbind(output,data_format_list[[i]])
   }
   return(output)
 }

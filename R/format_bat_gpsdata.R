@@ -26,4 +26,6 @@ format_gps_list <- function(data) {
     data_format <- data_format[!sapply(data_format, is.null)]
   assign("data_format", data_format, envir = .GlobalEnv)
   
+write.csv(lapply(data_format), )
+
 }

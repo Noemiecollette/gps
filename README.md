@@ -13,14 +13,17 @@ This project is structured as follow:
 
 ```         
 .
-├── DESCRIPTION                                # Project metadata
-├── LICENSE.md                                 # License of the project
-├── R                                          # Contains R functions
+├── DESCRIPTION                             # Project metadata
+├── LICENSE.md                              # License of the project
+├── R                                       # Contains R functions
+│   ├── README.md
+│   ├── combine_data.R                      # Function to merge datasets
+│   ├── format_bat_gpsdata.R                # Function to remove NA and remove columns 
+│   └── read_bat_data.R
+├── README.md                               # Presentation of the project
+├── analyses                                # Contains R scripts
 │   └── README.md
-├── README.md                                  # Presentation of the project
-├── analyses                                   # Contains R scripts
-│   └── README.md
-├── data                                       # Contains raw data
+├── data                                    # Contains raw data
 │   ├── Bat1_3D6001852B958.csv
 │   ├── Bat2_3D6001852B95D.csv
 │   ├── Bat3_3D6001852B978.csv
@@ -30,8 +33,9 @@ This project is structured as follow:
 │   ├── Bat7_3D6001852B9A3.csv
 │   ├── Bat8_3D6001852B9A7.csv
 │   └── README.md
-├── figures
+├── figures                                 # Folders with our output figures
 │   └── README.md
+├── make.R                                  # Script to setup & run the project
 └── outputs
     └── README.md
 ```

@@ -1,22 +1,29 @@
-#' Read species list file - WWF WildFinder
+#' Formatage de data GPS
 #'
 #' @description 
-#' Cette fonction formate le jeu de données, enlève les valeurs de NA et sélectionne les colonnes d'intérêt pour la suite des analyses 
-#' `wildfinder-mammals_list.csv` stored in `data/wildfinder/`.
+#' Cette fonction formate le jeu de données, enlève les valeurs de NA et sélectionne les colonnes d'intérêt pour la suite des analyses.
 #'
-#' @param file a character of length 1. The path to the csv file.
+#' @param file data une liste de .csv
 #'
 #' @return 
 #' 
 #' @export
 
-data_format <- data %>%
-  dplyr::mutate(
-    datetime <- as.POSIXct(timestamp, format="%Y-%m-%d %H:%M:%S"),
-    speed <- ground-speed
-    tag_id <- as.character(tag-local-identifier),
-    lon <- location-long,
-    lat <- location-long)
 
-
-data<-dplyr::select(tag_id, datetime, lon, lat, speed)
+format_gps_list <- function(data) {
+  data_format <- lapply(data, function(x) {
+    x %>%
+      dplyr::mutate(
+        datetime = as.POSIXct(timestamp, format = "%Y-%m-%d %H:%M:%S"),
+        speed    = `ground-speed`,
+        tag_id   = as.character(`tag-local-identifier`),
+        lon      = `location-long`,
+        lat      = `location-lat`
+      ) %>%
+      dplyr::select(tag_id, datetime, lon, lat, speed)
+    
+  })
+    data_format <- data_format[!sapply(data_format, is.null)]
+  assign("data_format", data_format, envir = .GlobalEnv)
+  
+}

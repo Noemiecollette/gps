@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -85,8 +120,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="présentation" class="level2">
-<h2 class="anchored" data-anchor-id="présentation">Présentation</h2>
+<section id="gpsdata4lazyscientists" class="level2">
+<h2 class="anchored" data-anchor-id="gpsdata4lazyscientists">gpsdata4lazyscientists</h2>
 <p>Et si pouviez charger, nettoyer et formater vos données GPS <strong>en un seul clic</strong> ? Ne rêvez plus, nous avons rendu cela possible : le package <code>gpsdata4lazyscientists</code> est là pour vous !</p>
 <div id="fig-lazygroup" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -99,6 +134,7 @@ Figure&nbsp;1: Lazygroupp
 </figure>
 </div>
 <p>See <a href="#fig-lazygroup" class="quarto-xref">Figure&nbsp;1</a> for an illustration of the team building experience during this workshop</p>
+<p>exploration of git <img src="git.png.JPG" id="git" class="img-fluid" alt="tree of life"></p>
 </section>
 <section id="les-données-gps-kézako" class="level2">
 <h2 class="anchored" data-anchor-id="les-données-gps-kézako">Les données GPS : kézako ?</h2>
@@ -111,18 +147,20 @@ Figure&nbsp;1: Lazygroupp
 <li>… et pourquoi pas une colonne en bonus, par exemple la vitesse !</li>
 </ul>
 </section>
-<section id="ce-que-propose-notre-package" class="level2">
-<h2 class="anchored" data-anchor-id="ce-que-propose-notre-package">Ce que propose notre package</h2>
+<section id="ce-que-propose-notre-futur-package" class="level2">
+<h2 class="anchored" data-anchor-id="ce-que-propose-notre-futur-package">Ce que propose notre (futur) package:</h2>
 <section id="les-fonctions-magnifiques-que-nous-avons-créées" class="level3">
 <h3 class="anchored" data-anchor-id="les-fonctions-magnifiques-que-nous-avons-créées">Les fonctions magnifiques que nous avons créées</h3>
+<section id="dans-un-joli-dossier-r" class="level4">
+<h4 class="anchored" data-anchor-id="dans-un-joli-dossier-r">dans un joli dossier “R”</h4>
 <ul>
 <li>read_bat_data()</li>
 <li>format_gps_list()</li>
 <li>combine_data()</li>
-<li>longueur_traj()</li>
 <li>gpsdata_withmapview()</li>
 <li>Plein de plots rigolos et qui assureront des soirées de rigolades entre ami.es chercheur.euses qui traitent des données GPS en tout genre</li>
 </ul>
+</section>
 </section>
 <section id="structure-du-compendium" class="level3">
 <h3 class="anchored" data-anchor-id="structure-du-compendium">Structure du compendium</h3>
@@ -168,16 +206,146 @@ Figure&nbsp;2: Gaelle la boss
 </figure>
 </div>
 </section>
+</section>
+<section id="workflow" class="level2">
+<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
+<p>Voici notre pipeline (oui, des experts en targets)</p>
+<div id="targetworkflow" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="TARGETS.png" class="img-fluid figure-img"></p>
+<figcaption>Pipeline</figcaption>
+</figure>
+</div>
 <section id="exploration-de-données" class="level3">
 <h3 class="anchored" data-anchor-id="exploration-de-données">Exploration de données</h3>
+<section id="import-des-données" class="level4">
+<h4 class="anchored" data-anchor-id="import-des-données">Import des données</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">tar_read</span>(<span class="st">"data"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>data_format<span class="ot">&lt;-</span><span class="fu">tar_read</span>(<span class="st">"data_format"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>fusion_data<span class="ot">&lt;-</span><span class="fu">tar_read</span>(<span class="st">"fusion_data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="initial-dataset" class="level4">
 <h4 class="anchored" data-anchor-id="initial-dataset">Initial dataset</h4>
-<p>str(data$Bat1_3D6001852B958) `<code></code> On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data<span class="sc">$</span>Bat1_3D6001852B958)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité</p>
 </section>
 <section id="il-y-a-trop-de-colonnes-pour-nous-useless" class="level4">
 <h4 class="anchored" data-anchor-id="il-y-a-trop-de-colonnes-pour-nous-useless">Il y a trop de colonnes pour nous, useless :)</h4>
-<p>str(data_format$Bat1_3D6001852B958) ` `` Oh waw, c’est bien mieux :)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_format<span class="sc">$</span>Bat1_3D6001852B958)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [1,265 × 5] (S3: tbl_df/tbl/data.frame)
+ $ tag_id  : chr [1:1265] "23" "23" "23" "23" ...
+ $ datetime: POSIXct[1:1265], format: "2017-08-08 20:27:38" "2017-08-08 20:28:07" ...
+ $ lon     : num [1:1265] -6.68 -6.67 -6.67 -6.67 -6.67 ...
+ $ lat     : num [1:1265] 41.2 41.2 41.2 41.2 41.2 ...
+ $ speed   : num [1:1265] 13.36 12.33 11.31 4.11 3.08 ...</code></pre>
+</div>
+</div>
+<p>Oh waw, c’est bien mieux :)</p>
 </section>
+</section>
+<section id="presentation-des-données" class="level3">
+<h3 class="anchored" data-anchor-id="presentation-des-données">Presentation des données</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>trajectoires <span class="ot">&lt;-</span> fusion_data <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(tag_id) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">n_points =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">amplitude_lat =</span> <span class="fu">max</span>(lat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> <span class="fu">min</span>(lat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">amplitude_lon =</span> <span class="fu">max</span>(lon, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> <span class="fu">min</span>(lon, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_speed =</span> <span class="fu">max</span>(speed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">longueur_km =</span> <span class="fu">sum</span>(geosphere<span class="sc">::</span><span class="fu">distHaversine</span>(<span class="fu">cbind</span>(lon, lat)))<span class="sc">/</span><span class="dv">1000</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Caractéristiques des trajectoires</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 13%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 15%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">tag_id</th>
+<th style="text-align: right;">n_points</th>
+<th style="text-align: right;">amplitude_lat</th>
+<th style="text-align: right;">amplitude_lon</th>
+<th style="text-align: right;">max_speed</th>
+<th style="text-align: right;">longueur_km</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">02</td>
+<td style="text-align: right;">219</td>
+<td style="text-align: right;">0.031615</td>
+<td style="text-align: right;">0.042879</td>
+<td style="text-align: right;">14.38889</td>
+<td style="text-align: right;">32.82234</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">0.181903</td>
+<td style="text-align: right;">0.399564</td>
+<td style="text-align: right;">21.58333</td>
+<td style="text-align: right;">132.78080</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td style="text-align: right;">1568</td>
+<td style="text-align: right;">0.246391</td>
+<td style="text-align: right;">0.759614</td>
+<td style="text-align: right;">39.05556</td>
+<td style="text-align: right;">267.60394</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">23</td>
+<td style="text-align: right;">1265</td>
+<td style="text-align: right;">0.594391</td>
+<td style="text-align: right;">0.756603</td>
+<td style="text-align: right;">19.52778</td>
+<td style="text-align: right;">248.81147</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">27</td>
+<td style="text-align: right;">1435</td>
+<td style="text-align: right;">0.379022</td>
+<td style="text-align: right;">1.147372</td>
+<td style="text-align: right;">21.58333</td>
+<td style="text-align: right;">259.26498</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">41</td>
+<td style="text-align: right;">1623</td>
+<td style="text-align: right;">0.258297</td>
+<td style="text-align: right;">0.657285</td>
+<td style="text-align: right;">70.30000</td>
+<td style="text-align: right;">243.06551</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">48</td>
+<td style="text-align: right;">2863</td>
+<td style="text-align: right;">0.280509</td>
+<td style="text-align: right;">0.685906</td>
+<td style="text-align: right;">24.66667</td>
+<td style="text-align: right;">518.78961</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 <section id="la-carto-qui-ne-sexportait-pas-en-html" class="level3">
 <h3 class="anchored" data-anchor-id="la-carto-qui-ne-sexportait-pas-en-html">La carto qui ne s’exportait pas en HTML</h3>
@@ -189,6 +357,27 @@ Figure&nbsp;2: Gaelle la boss
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gpsdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: GPS data for all individuals
 </figcaption>
+</figure>
+</div>
+</section>
+<section id="dautres-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="dautres-analyses">D’autres analyses…</h3>
+<div id="longitude" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure_longitude_time.png" class="img-fluid figure-img"></p>
+<figcaption>longitude des individus en fonction du temps</figcaption>
+</figure>
+</div>
+<div id="latitude" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure_latitude_time.png" class="img-fluid figure-img"></p>
+<figcaption>latitude des individus en fonction du temps</figcaption>
+</figure>
+</div>
+<div id="speed" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/Figure_speed.png" class="img-fluid figure-img"></p>
+<figcaption>vitesse des individus en fonction du temps</figcaption>
 </figure>
 </div>
 </section>

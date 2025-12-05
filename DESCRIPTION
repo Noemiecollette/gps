@@ -42,4 +42,6 @@ Imports:
     dplyr,
     lubridate,
     tidyverse,
-    htmlwidgets
+    htmlwidgets,
+    knitr,
+    geosphere

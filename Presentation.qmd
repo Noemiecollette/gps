@@ -1,5 +1,5 @@
 ---
-title: "Présentation du package gpsdata4lazyscientists"
+title: "Présentation du (package) gpsdata4lazyscientists"
 date: 2025-12-05
 author:
     - name: Ryan Boswarthick
@@ -26,7 +26,7 @@ Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic**
 
 See @fig-lazygroup for an illustration of the team building experience during this workshop
 
-exploration of git ![tree of life](git.png.JPG){#git}
+exploration of git ![tree of life](git.png){#git}
 
 ## Les données GPS : kézako ?
 
@@ -87,11 +87,11 @@ Les données de suivi par balise GPS ont une structure standardisée, avec *a mi
 
 Big up à Gaelle qui nous a généré cet arbre de façon **automatique** \<3
 
-![Gaelle la boss](IMG_4395.JPG){#fig-gaelle}
+![Gaelle la boss](IMG_4395.jpg){#fig-gaelle}
 
 ## Workflow
 
-Voici notre pipeline (oui, des experts en targets)
+#### Voici notre pipeline (oui, des experts en targets)
 
 ![Pipeline](TARGETS.png){#targetworkflow}
 
@@ -147,12 +147,12 @@ knitr::kable(trajectoires, caption = "Caractéristiques des trajectoires")
 
 ### La carto qui ne s'exportait pas en HTML
 
-![GPS data for all individuals](Capture%20d'écran%202025-12-05%20105745.png){#fig-gpsdata}
+![Figure 1: GPS data for all individuals](Capture%20d'écran%202025-12-05%20105745.png){#fig-gpsdata}
 
 ### D'autres analyses...
 
-![longitude des individus en fonction du temps](figures/Figure_longitude_time.png){#longitude}
+![Figure 2: longitude des individus en fonction du temps](figures/Figure_longitude_time.png){#longitude}
 
-![latitude des individus en fonction du temps](figures/Figure_latitude_time.png){#latitude}
+![Figure 3: latitude des individus en fonction du temps](figures/Figure_latitude_time.png){#latitude}
 
-![vitesse des individus en fonction du temps](figures/Figure_speed.png){#speed}
+![Figure 4: vitesse des individus en fonction du temps](figures/Figure_speed.png){#speed}

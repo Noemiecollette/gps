@@ -25,6 +25,9 @@ Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic**
 
 See @fig-lazygroup for an illustration of the team building experience during this workshop
 
+exploration of git
+![tree of life](git.png.JPG){#git}
+
 ## Les données GPS : kézako ?
 
 Les données de suivi par balise GPS ont une structure standardisée, avec *a minima* les colonnes suivantes :
@@ -51,7 +54,7 @@ Les données de suivi par balise GPS ont une structure standardisée, avec *a mi
 
 Voici notre pipeline (oui, des experts en targets)
 
-![Pipeline](TARGETS.png){#fig-lazygroup}
+![Pipeline](TARGETS.png){#targetworkflow}
 
 ### Exploration de données
 
@@ -77,8 +80,8 @@ Oh waw, c'est bien mieux :)
 
 ### D'autres analyses...
 
-![longitude des individus en fonction du temps](figures/Figure_longitude_time.png){#fig-lazygroup}
+![longitude des individus en fonction du temps](figures/Figure_longitude_time.png){#longitude}
 
-![latitude des individus en fonction du temps](figures/Figure_latitude_time.png){#fig-lazygroup}
+![latitude des individus en fonction du temps](figures/Figure_latitude_time.png){#latitude}
 
-![vitesse des individus en fonction du temps](figures/Figure_speed.png){#fig-lazygroup}
+![vitesse des individus en fonction du temps](figures/Figure_speed.png){#speed}

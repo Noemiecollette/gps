@@ -43,8 +43,6 @@ This project is structured as follow:
     └── README.md
 ```
 
-![Big up à Gaelle pour cet arbre généré de façon automatique][def]
-
 ## Installation
 
 To install this compendium:

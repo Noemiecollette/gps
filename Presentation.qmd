@@ -46,19 +46,60 @@ Les données de suivi par balise GPS ont une structure standardisée, avec *a mi
 -   gpsdata_withmapview()
 -   Plein de plots rigolos et qui assureront des soirées de rigolades entre ami.es chercheur.euses qui traitent des données GPS en tout genre
 
+### Structure du compendium
+
+```         
+.
+├── DESCRIPTION                             # Project metadata
+├── LICENSE.md                              # License of the project
+├── Presentation.html                       # HTML format of our presentation
+├── Presentation.qmd                        # QMD format of our presentation
+├── R                                       # Contains R functions
+│   ├── README.md
+│   ├── combine_data.R                      # Function to merge datasets
+│   ├── format_gps_list.R                   # Function to remove NA and remove columns
+│   ├── gpsdata_withmapview.R               # Function to plot map of tracking data 
+│   └── read_bat_data.R                     # Open the tracking data
+│   └── speed.R                             # Calculate speed of the individuals
+├── README.md                               # Presentation of the project
+├── analyses                                # Contains R scripts
+│   └── README.md
+├── data                                    # Contains raw data
+│   ├── Bat1_3D6001852B958.csv
+│   ├── Bat2_3D6001852B95D.csv
+│   ├── Bat3_3D6001852B978.csv
+│   ├── Bat4_3D6001852B980.csv
+│   ├── Bat5_3D6001852B98C.csv
+│   ├── Bat6_3D6001852B98E.csv
+│   ├── Bat7_3D6001852B9A3.csv
+│   ├── Bat8_3D6001852B9A7.csv
+│   └── README.md
+├── figures                                 # Folders with our output figures
+│   └── README.md
+├── make.R                                  # Script to setup & run the project
+└── outputs
+    └── README.md
+```
+
+Big up à Gaelle qui nous a généré cet arbre de façon **automatique** <3
+
+![Gaelle la boss](IMG_4395.JPG){#fig-gaelle}
+
 ### Exploration de données
 
 #### Initial dataset
 ```{r}
 str(data$Bat1_3D6001852B958)
-```
+``
+`
 On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité
 
 #### Il y a trop de colonnes pour nous, useless :)
 
 ```{r}
 str(data_format$Bat1_3D6001852B958)
-```
+`
+``
 Oh waw, c'est bien mieux :)
 
 ### La carto qui ne s'exportait pas en HTML

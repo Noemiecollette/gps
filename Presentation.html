@@ -87,34 +87,110 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="présentation" class="level2">
 <h2 class="anchored" data-anchor-id="présentation">Présentation</h2>
-<p>Et si pouviez charger, nettoyer et formater vos données GPS <strong>en un seul clic</strong> ? Ne rêvez plus : le package gpsdata4lazyscientists est là pour vous !</p>
+<p>Et si pouviez charger, nettoyer et formater vos données GPS <strong>en un seul clic</strong> ? Ne rêvez plus, nous avons rendu cela possible : le package <code>gpsdata4lazyscientists</code> est là pour vous !</p>
+<div id="fig-lazygroup" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lazygroup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="IMG_4391.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lazygroup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Lazygroupp
+</figcaption>
+</figure>
+</div>
+<p>See <a href="#fig-lazygroup" class="quarto-xref">Figure&nbsp;1</a> for an illustration of the team building experience during this workshop</p>
 </section>
 <section id="les-données-gps-kézako" class="level2">
 <h2 class="anchored" data-anchor-id="les-données-gps-kézako">Les données GPS : kézako ?</h2>
 <p>Les données de suivi par balise GPS ont une structure standardisée, avec <em>a minima</em> les colonnes suivantes :</p>
 <ul>
-<li>ID de l’individu<br>
-</li>
-<li>Longitude<br>
-</li>
-<li>Latitude<br>
-</li>
+<li>ID de l’individu</li>
+<li>Longitude</li>
+<li>Latitude</li>
 <li>DateTime</li>
+<li>… et pourquoi pas une colonne en bonus, par exemple la vitesse !</li>
 </ul>
 </section>
 <section id="ce-que-propose-notre-package" class="level2">
 <h2 class="anchored" data-anchor-id="ce-que-propose-notre-package">Ce que propose notre package</h2>
-<section id="les-fonctions" class="level3">
-<h3 class="anchored" data-anchor-id="les-fonctions">Les fonctions</h3>
+<section id="les-fonctions-magnifiques-que-nous-avons-créées" class="level3">
+<h3 class="anchored" data-anchor-id="les-fonctions-magnifiques-que-nous-avons-créées">Les fonctions magnifiques que nous avons créées</h3>
 <ul>
-<li>read_bat_data()<br>
-</li>
-<li>format_gps_list()<br>
-</li>
-<li>combine_data()<br>
-</li>
-<li>gpsdata_withmapview</li>
+<li>read_bat_data()</li>
+<li>format_gps_list()</li>
+<li>combine_data()</li>
+<li>longueur_traj()</li>
+<li>gpsdata_withmapview()</li>
+<li>Plein de plots rigolos et qui assureront des soirées de rigolades entre ami.es chercheur.euses qui traitent des données GPS en tout genre</li>
 </ul>
+</section>
+<section id="structure-du-compendium" class="level3">
+<h3 class="anchored" data-anchor-id="structure-du-compendium">Structure du compendium</h3>
+<pre><code>.
+├── DESCRIPTION                             # Project metadata
+├── LICENSE.md                              # License of the project
+├── Presentation.html                       # HTML format of our presentation
+├── Presentation.qmd                        # QMD format of our presentation
+├── R                                       # Contains R functions
+│   ├── README.md
+│   ├── combine_data.R                      # Function to merge datasets
+│   ├── format_gps_list.R                   # Function to remove NA and remove columns
+│   ├── gpsdata_withmapview.R               # Function to plot map of tracking data 
+│   └── read_bat_data.R                     # Open the tracking data
+│   └── speed.R                             # Calculate speed of the individuals
+├── README.md                               # Presentation of the project
+├── analyses                                # Contains R scripts
+│   └── README.md
+├── data                                    # Contains raw data
+│   ├── Bat1_3D6001852B958.csv
+│   ├── Bat2_3D6001852B95D.csv
+│   ├── Bat3_3D6001852B978.csv
+│   ├── Bat4_3D6001852B980.csv
+│   ├── Bat5_3D6001852B98C.csv
+│   ├── Bat6_3D6001852B98E.csv
+│   ├── Bat7_3D6001852B9A3.csv
+│   ├── Bat8_3D6001852B9A7.csv
+│   └── README.md
+├── figures                                 # Folders with our output figures
+│   └── README.md
+├── make.R                                  # Script to setup &amp; run the project
+└── outputs
+    └── README.md</code></pre>
+<p>Big up à Gaelle qui nous a généré cet arbre de façon <strong>automatique</strong> &lt;3</p>
+<div id="fig-gaelle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gaelle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="IMG_4395.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gaelle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Gaelle la boss
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="exploration-de-données" class="level3">
+<h3 class="anchored" data-anchor-id="exploration-de-données">Exploration de données</h3>
+<section id="initial-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="initial-dataset">Initial dataset</h4>
+<p>str(data$Bat1_3D6001852B958) `<code></code> On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité</p>
+</section>
+<section id="il-y-a-trop-de-colonnes-pour-nous-useless" class="level4">
+<h4 class="anchored" data-anchor-id="il-y-a-trop-de-colonnes-pour-nous-useless">Il y a trop de colonnes pour nous, useless :)</h4>
+<p>str(data_format$Bat1_3D6001852B958) ` `` Oh waw, c’est bien mieux :)</p>
+</section>
+</section>
+<section id="la-carto-qui-ne-sexportait-pas-en-html" class="level3">
+<h3 class="anchored" data-anchor-id="la-carto-qui-ne-sexportait-pas-en-html">La carto qui ne s’exportait pas en HTML</h3>
+<div id="fig-gpsdata" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gpsdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Capture%20d'écran%202025-12-05%20105745.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gpsdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: GPS data for all individuals
+</figcaption>
+</figure>
+</div>
 </section>
 </section>
 

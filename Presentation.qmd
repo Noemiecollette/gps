@@ -113,7 +113,11 @@ fusion_data<-tar_read("fusion_data")
 #| eval: false
 str(data$Bat1_3D6001852B958)
 ```
-
+```{r}
+#| echo: true
+#| eval: true
+names(data$Bat1_3D6001852B958)
+```
 On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité
 
 #### Il y a trop de colonnes pour nous, useless :)

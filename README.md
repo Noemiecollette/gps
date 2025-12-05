@@ -14,11 +14,15 @@ This project is structured as follow:
 .
 ├── DESCRIPTION                             # Project metadata
 ├── LICENSE.md                              # License of the project
+├── Presentation.html                       # HTML format of our presentation
+├── Presentation.qmd                        # QMD format of our presentation
 ├── R                                       # Contains R functions
 │   ├── README.md
 │   ├── combine_data.R                      # Function to merge datasets
-│   ├── format_bat_gpsdata.R                # Function to remove NA and remove columns 
-│   └── read_bat_data.R
+│   ├── format_gps_list.R                   # Function to remove NA and remove columns
+│   ├── gpsdata_withmapview.R               # Function to plot map of tracking data 
+│   └── read_bat_data.R                     # Open the tracking data
+│   └── speed.R                             # Calculate speed of the individuals
 ├── README.md                               # Presentation of the project
 ├── analyses                                # Contains R scripts
 │   └── README.md

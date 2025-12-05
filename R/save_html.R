@@ -1,9 +1,11 @@
-#' Sauvegarder un objet mapview en HTML
+#' Save your wonderful mapview HTML object :)
 #'
-#' @param map_obj Objet mapview à sauvegarder
-#' @param folder Dossier où sauvegarder le fichier
+#' @param map Objet mapview à sauvegarder :)
+#' @param folder Dossier où sauvegarder votre magnifique fichier
 #' @param filename Nom du fichier HTML (par défaut "map.html")
 #' @return Chemin complet du fichier HTML sauvegardé - open in viewer or browser pour voir la carto :)
+#' @examples
+#' save_html(map)
 
 library(htmlwidgets)
 

@@ -1,11 +1,12 @@
-library(htmlwidgets)
-
 #' Sauvegarder un objet mapview en HTML
 #'
 #' @param map_obj Objet mapview à sauvegarder
 #' @param folder Dossier où sauvegarder le fichier
 #' @param filename Nom du fichier HTML (par défaut "map.html")
-#' @return Chemin complet du fichier HTML sauvegardé
+#' @return Chemin complet du fichier HTML sauvegardé - open in viewer or browser pour voir la carto :)
+
+library(htmlwidgets)
+
 save_html <- function(map_obj, folder = "figures", filename = "map.html") {
 
   if(!dir.exists(folder)) dir.create(folder)

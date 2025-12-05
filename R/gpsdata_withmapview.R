@@ -35,6 +35,7 @@ library(sf)
 library(mapview)
 library(lubridate)
 library(htmlwidgets)
+library(tidyverse)
 
 gpsdata_withmapview <- function(data) {
   

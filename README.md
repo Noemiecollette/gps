@@ -43,7 +43,7 @@ This project is structured as follow:
     └── README.md
 ```
 
-![Gaelle](IMG_4395.JPG "Big up à Gaelle pour cet arbre généré de façon automatique")
+![Big up à Gaelle pour cet arbre généré de façon automatique][def]
 
 ## Installation
 
@@ -70,3 +70,5 @@ This project is released under the [GPL-2](https://choosealicense.com/licenses/g
 ## Citation
 
 > Boswarthick R., Collette N., Mac Call M., Miguet P., Picon G. (2025) gpsdata4lazyscientists: A package for preparing GPS tracking data, dedicated to lazy scientists. URL: <https://github.com/Noemiecollette/gps.git>
+
+[def]: IMG_4395.JPG "Big up à Gaelle pour cet arbre généré de façon automatique"

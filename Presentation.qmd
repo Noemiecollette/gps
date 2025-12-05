@@ -19,22 +19,47 @@ execute:
 
 ## Présentation
 
-Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic** ? Ne rêvez plus : le package gpsdata4lazyscientists est là pour vous !
+Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic** ? Ne rêvez plus, nous avons rendu cela possible : le package `gpsdata4lazyscientists` est là pour vous !
+
+![Lazygroupp](IMG_4391.JPG){#fig-lazygroup}
+
+See @fig-lazygroup for an illustration of the team building experience during this workshop
 
 ## Les données GPS : kézako ?
 
-Les données de suivi par balise GPS ont une structure standardisée, avec *a minima* les colonnes suivantes :  
+Les données de suivi par balise GPS ont une structure standardisée, avec *a minima* les colonnes suivantes :
 
-*  ID de l'individu  
-*  Longitude  
-*  Latitude  
-*  DateTime
+-   ID de l'individu
+-   Longitude
+-   Latitude
+-   DateTime
+-   ... et pourquoi pas une colonne en bonus, par exemple la vitesse !
 
 ## Ce que propose notre package
 
-### Les fonctions
+### Les fonctions magnifiques que nous avons créées
 
-*  read_bat_data()  
-*  format_gps_list()  
-*  combine_data()  
-*  gpsdata_withmapview
+-   read_bat_data()
+-   format_gps_list()
+-   combine_data()
+-   longueur_traj()
+-   gpsdata_withmapview()
+-   Plein de plots rigolo et qui assureront des soirées de rigolades entre amis chercheurs qui traitent des données GPS en tout genre
+
+### Exploration de données
+
+#### Initial dataset
+```{r}
+str(data$Bat1_3D6001852B958)
+```
+On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité
+
+#### Il y a trop de colonnes pour nous, useless :)
+
+```{r}
+str(data_format$Bat1_3D6001852B958)
+```
+Oh waw, c'est bien mieux :)
+
+### La carto qui ne s'exportait pas en HTML
+![GPS data for all individuals](Capture d'écran 2025-12-05 105745.png){#fig-gpsdata}

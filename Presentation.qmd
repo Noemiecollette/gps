@@ -14,7 +14,8 @@ author:
       email: gaelle.picon@cefe.cnrs.fr
 format: html
 execute:
-    echo: false
+    echo: true
+    eval: true
 ---
 
 ## gpsdata4lazyscientists
@@ -46,7 +47,6 @@ Les données de suivi par balise GPS ont une structure standardisée, avec *a mi
 -   read_bat_data()
 -   format_gps_list()
 -   combine_data()
--   longueur_traj()
 -   gpsdata_withmapview()
 -   Plein de plots rigolos et qui assureront des soirées de rigolades entre ami.es chercheur.euses qui traitent des données GPS en tout genre
 
@@ -97,13 +97,22 @@ Voici notre pipeline (oui, des experts en targets)
 
 ### Exploration de données
 
+#### Import des données
+
+```{r}
+library(targets)
+data<-tar_read("data")
+data_format<-tar_read("data_format")
+fusion_data<-tar_read("fusion_data")
+```
 #### Initial dataset
 
 ```{r}
+#| echo: true
+#| eval: false
 str(data$Bat1_3D6001852B958)
 ```
-
-\` On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité
+On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité
 
 #### Il y a trop de colonnes pour nous, useless :)
 
@@ -113,9 +122,29 @@ str(data_format$Bat1_3D6001852B958)
 
 Oh waw, c'est bien mieux :)
 
-### La carto qui ne s'exportait pas en HTML
+### Presentation des données
 
-![GPS data for all individuals](Capture%20d'écran%202025-12-05%20105745.png){#fig-gpsdata}
+```{r}
+trajectoires <- fusion_data |> 
+  dplyr::group_by(tag_id) |>
+    dplyr::summarise(
+      n_points = dplyr::n(),
+      amplitude_lat = max(lat, na.rm = TRUE) - min(lat, na.rm = TRUE),
+      amplitude_lon = max(lon, na.rm = TRUE) - min(lon, na.rm = TRUE),
+      max_speed = max(speed, na.rm = TRUE),
+      longueur_km = sum(geosphere::distHaversine(cbind(lon, lat)))/1000
+    )
+```
+
+```{r}
+#| echo: false
+#| eval: true
+
+knitr::kable(trajectoires, caption = "Caractéristiques des trajectoires")
+```
+
+### La carto qui ne s'exportait pas en HTML
+![GPS data for all individuals](Capture d'écran 2025-12-05 105745.png){#fig-gpsdata}
 
 ### D'autres analyses...
 

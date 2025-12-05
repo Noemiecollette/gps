@@ -234,12 +234,25 @@ Figure&nbsp;2: Gaelle la boss
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data<span class="sc">$</span>Bat1_3D6001852B958)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data<span class="sc">$</span>Bat1_3D6001852B958)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "event-id"                        "visible"                        
+ [3] "timestamp"                       "location-long"                  
+ [5] "location-lat"                    "gps:hdop"                       
+ [7] "gps:maximum-signal-strength"     "gps:satellite-count"            
+ [9] "ground-speed"                    "height-above-msl"               
+[11] "manually-marked-outlier"         "sensor-type"                    
+[13] "individual-taxon-canonical-name" "tag-local-identifier"           
+[15] "individual-local-identifier"     "study-name"                     </code></pre>
+</div>
+</div>
 <p>On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité</p>
 </section>
 <section id="il-y-a-trop-de-colonnes-pour-nous-useless" class="level4">
 <h4 class="anchored" data-anchor-id="il-y-a-trop-de-colonnes-pour-nous-useless">Il y a trop de colonnes pour nous, useless :)</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_format<span class="sc">$</span>Bat1_3D6001852B958)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data_format<span class="sc">$</span>Bat1_3D6001852B958)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [1,265 × 5] (S3: tbl_df/tbl/data.frame)
  $ tag_id  : chr [1:1265] "23" "23" "23" "23" ...
@@ -255,15 +268,15 @@ Figure&nbsp;2: Gaelle la boss
 <section id="presentation-des-données" class="level3">
 <h3 class="anchored" data-anchor-id="presentation-des-données">Presentation des données</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>trajectoires <span class="ot">&lt;-</span> fusion_data <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(tag_id) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">n_points =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">amplitude_lat =</span> <span class="fu">max</span>(lat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> <span class="fu">min</span>(lat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">amplitude_lon =</span> <span class="fu">max</span>(lon, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> <span class="fu">min</span>(lon, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_speed =</span> <span class="fu">max</span>(speed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">longueur_km =</span> <span class="fu">sum</span>(geosphere<span class="sc">::</span><span class="fu">distHaversine</span>(<span class="fu">cbind</span>(lon, lat)))<span class="sc">/</span><span class="dv">1000</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>trajectoires <span class="ot">&lt;-</span> fusion_data <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(tag_id) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">n_points =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">amplitude_lat =</span> <span class="fu">max</span>(lat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> <span class="fu">min</span>(lat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">amplitude_lon =</span> <span class="fu">max</span>(lon, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> <span class="fu">min</span>(lon, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_speed =</span> <span class="fu">max</span>(speed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">longueur_km =</span> <span class="fu">sum</span>(geosphere<span class="sc">::</span><span class="fu">distHaversine</span>(<span class="fu">cbind</span>(lon, lat)))<span class="sc">/</span><span class="dv">1000</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">

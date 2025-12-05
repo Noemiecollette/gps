@@ -11,3 +11,8 @@ plot_latvstime <- plot_latitude_time(fusion_data)
 map<-gpsdata_withmapview(fusion_data)
 map
 save_html(map)
+
+
+targets::tar_make()
+
+targets::tar_visnetwork()

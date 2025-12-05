@@ -40,4 +40,6 @@ Imports:
     here,
     sf,
     dplyr,
-    lubridate
+    lubridate,
+    tidyverse,
+    htmlwidgets

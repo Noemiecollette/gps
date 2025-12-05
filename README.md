@@ -1,12 +1,14 @@
-# Presentation
+# Project gpsdata4lazyscientists
 
-[\[License: GPL-2\](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
+[![License: GPL-2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 
 > This project is the result of the group project of the FRB-CESAB training "Reproducible Research in Computational Ecology".
 
 This project aims to read some csv that are already downloaded in our github repository. The csv are tracking data of the [European free-tailed bat (*Tadarida teniotis*)](https://en.wikipedia.org/wiki/European_free-tailed_bat). They were downloaded from Teague O'Mara's Movebank study called ["3D flights of European free-tailed bats"](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study312057662). This project has functions to read datasets, to format and then to combine them into one dataset.
 
-It is structured as follow:
+## Content
+
+This project is structured as follow:
 
 ```         
 .

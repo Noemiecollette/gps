@@ -23,4 +23,18 @@ Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic**
 
 ## Les données GPS : kézako ?
 
+Les données de suivi par balise GPS ont une structure standardisée, avec *a minima* les colonnes suivantes :  
+
+*  ID de l'individu  
+*  Longitude  
+*  Latitude  
+*  DateTime
+
 ## Ce que propose notre package
+
+### Les fonctions
+
+*  read_bat_data()  
+*  format_gps_list()  
+*  combine_data()  
+*  gpsdata_withmapview

@@ -19,22 +19,28 @@ execute:
 
 ## Présentation
 
-Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic** ? Ne rêvez plus : le package gpsdata4lazyscientists est là pour vous !
+Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic** ? Ne rêvez plus, nous avons rendu cela possible : le package `gpsdata4lazyscientists` est là pour vous !
+
+![Lazygroupp](IMG_4391.JPG){#fig-lazygroup}
+
+See @fig-lazygroup for an illustration of the team building experience during this workshop
 
 ## Les données GPS : kézako ?
 
-Les données de suivi par balise GPS ont une structure standardisée, avec *a minima* les colonnes suivantes :  
+Les données de suivi par balise GPS ont une structure standardisée, avec *a minima* les colonnes suivantes :
 
-*  ID de l'individu  
-*  Longitude  
-*  Latitude  
-*  DateTime
+-   ID de l'individu
+-   Longitude
+-   Latitude
+-   DateTime
+-   ... et pourquoi pas une colonne en bonus, par exemple la vitesse !
 
 ## Ce que propose notre package
 
-### Les fonctions
+### Les fonctions magnifiques que nous avons créées
 
-*  read_bat_data()  
-*  format_gps_list()  
-*  combine_data()  
-*  gpsdata_withmapview
+-   read_bat_data()
+-   format_gps_list()
+-   combine_data()
+-   gpsdata_withmapview()
+-   plein de plots rigolo et qui assureront des soirées de rigolades entre amis chercheurs qui traitent des données GPS en tout genre

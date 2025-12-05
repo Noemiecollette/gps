@@ -32,4 +32,12 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Imports: 
     here,
-    utils
+    utils,
+    readr,
+    mapview,
+    tools,
+    ggplot2,
+    here,
+    sf,
+    dplyr,
+    lubridate

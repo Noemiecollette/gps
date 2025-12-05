@@ -44,7 +44,7 @@ Les données de suivi par balise GPS ont une structure standardisée, avec *a mi
 -   combine_data()
 -   longueur_traj()
 -   gpsdata_withmapview()
--   Plein de plots rigolo et qui assureront des soirées de rigolades entre amis chercheurs qui traitent des données GPS en tout genre
+-   Plein de plots rigolos et qui assureront des soirées de rigolades entre ami.es chercheur.euses qui traitent des données GPS en tout genre
 
 ### Exploration de données
 

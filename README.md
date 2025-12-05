@@ -43,6 +43,10 @@ This project is structured as follow:
     └── README.md
 ```
 
+![Gaelle](IMG_4395.JPG){#fig-gaelle}
+
+Big up à Gaelle pour cet arbre généré de façon **automatique** ;)
+
 ## Installation
 
 To install this compendium:

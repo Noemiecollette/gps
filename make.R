@@ -5,5 +5,6 @@ devtools::load_all()
 data<-read_bat_data()
 data_format<-format_gps_list(data)
 fusion_data<-rbind_data(data_format)
-map <- gpsdata_withmapview(fusion_data)
+map<-gpsdata_withmapview(fusion_data)
 map
+save_html(map)

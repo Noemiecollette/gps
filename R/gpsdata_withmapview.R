@@ -24,8 +24,8 @@
 #' }
 #'
 #' @examples
-#' # Suppose 'fusion_data' is your pre-processed GPS dataset
-#' gpsdata_withmapview(fusion_data)
+#' # If 'fusion_data' is your final GPS dataset
+#' gpsdata_withmapview(fusion_data) #a map of your data
 #'
 #' @export
 #' 
@@ -34,6 +34,7 @@ library(tidyverse)
 library(sf)
 library(mapview)
 library(lubridate)
+library(htmlwidgets)
 
 gpsdata_withmapview <- function(data) {
   
@@ -62,9 +63,6 @@ gpsdata_withmapview <- function(data) {
       layer.name = "Tracks"
     )
   
-    mapview::mapshot(map_obj, file = file.path("figures", filename))
-
   return(map_obj)
-}
 
-  
+}

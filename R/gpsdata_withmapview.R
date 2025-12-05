@@ -15,9 +15,9 @@
 #' The function will automatically convert the data to an sf object, 
 #' construct LINESTRING trajectories per individual, and display them on a mapview.
 #'
-#' @param data A data frame containing the GPS points. Must include columns \code{tag_id}, \code{lon}, \code{lat}, and \code{datetime}.
+#' @param data A data frame containing the GPS points. Must include columns {tag_id}, {lon}, {lat}, and {datetime}.
 #'
-#' @return A \code{mapview} object displaying:
+#' @return A \{mapview} object displaying:
 #' \itemize{
 #'   \item Individual GPS points
 #'   \item Trajectories (LINESTRING) per individual

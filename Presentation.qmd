@@ -25,8 +25,7 @@ Et si pouviez charger, nettoyer et formater vos données GPS **en un seul clic**
 
 See @fig-lazygroup for an illustration of the team building experience during this workshop
 
-exploration of git
-![tree of life](git.png.JPG){#git}
+exploration of git ![tree of life](git.png.JPG){#git}
 
 ## Les données GPS : kézako ?
 
@@ -41,6 +40,7 @@ Les données de suivi par balise GPS ont une structure standardisée, avec *a mi
 ## Ce que propose notre (futur) package:
 
 ### Les fonctions magnifiques que nous avons créées
+
 #### dans un joli dossier "R"
 
 -   read_bat_data()
@@ -85,10 +85,9 @@ Les données de suivi par balise GPS ont une structure standardisée, avec *a mi
     └── README.md
 ```
 
-Big up à Gaelle qui nous a généré cet arbre de façon **automatique** <3
+Big up à Gaelle qui nous a généré cet arbre de façon **automatique** \<3
 
 ![Gaelle la boss](IMG_4395.JPG){#fig-gaelle}
-
 
 ## Workflow
 
@@ -104,15 +103,14 @@ Voici notre pipeline (oui, des experts en targets)
 str(data$Bat1_3D6001852B958)
 ```
 
-``
-`
-On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité
+\` On a de super données de suivi GPS de chauve-souris ! Impressive et de bonne qualité
 
 #### Il y a trop de colonnes pour nous, useless :)
 
 ```{r}
 str(data_format$Bat1_3D6001852B958)
 ```
+
 Oh waw, c'est bien mieux :)
 
 ### La carto qui ne s'exportait pas en HTML

@@ -133,6 +133,7 @@ Oh waw, c'est bien mieux :)
 ```{r}
 trajectoires <- fusion_data |> 
   dplyr::group_by(tag_id) |>
+    dplyr::arrange(datetime, .by_group = TRUE) |>  # tri par datetime dans chaque groupe
     dplyr::summarise(
       n_points = dplyr::n(),
       amplitude_lat = max(lat, na.rm = TRUE) - min(lat, na.rm = TRUE),
